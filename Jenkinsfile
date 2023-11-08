@@ -3,18 +3,16 @@ pipeline {
     agent any
     //add stages for pipeline
     stages{
-        stage('Hello World')
-        {
-            echo 'Hello World'
+        stage('Verify Branch') {
+            steps {
+                echo '$GIT_BRANCH'
             }
-
-        stage('Build'){
-
-        }
-
-        stage('Test'){
-            
-
-        }
+            }
+        stage('Build') {
+            steps {}
+            }
+        stage('Test') {
+            steps {}
+            }
     }
 }
