@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: nupi
+      POSTGRES_USER: gotika
+      POSTGRES_DB: moomoodb
+    ports:
+      - "5432:5432"
+  web:
+    image: nginx
+    ports:
+      - "8888:80"
+    volumes:
+      - ./application/index.html:/usr/share/nginx/html/index.html
+      - ./application/styles.css:/usr/share/nginx/html/styles.css
