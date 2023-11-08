@@ -8,11 +8,5 @@ pipeline {
                 echo '$GIT_BRANCH'
             }
             }
-        stage('Build') {
-            
-            }
-        stage('Test') {
-            
-            }
     }
 }
