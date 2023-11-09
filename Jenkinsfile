@@ -12,7 +12,9 @@ pipeline {
                 steps{
                     sh(script:'docker images -a')
                     sh(script:"""
-                    docker build -t jenkins pipeline
+                    docker compose up
+                    docker images -a
+                    docker compose down
                     docker images -a
                     """
                     )
