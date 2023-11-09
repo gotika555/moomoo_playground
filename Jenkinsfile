@@ -10,12 +10,8 @@ pipeline {
             }
             stage('Docker build'){
                 steps{
-                    sh(script:'docker images -a')
                     sh(script:"""
-                    docker compose up
-                    docker images -a
-                    docker compose down
-                    docker images -a
+                    docker-compose build
                     """
                     )
 
